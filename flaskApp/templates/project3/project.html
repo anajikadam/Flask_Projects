@@ -1,0 +1,140 @@
+{% extends "project3/layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form action="{{ url_for('projects.predict3')}}" method="post">
+		  <div class="form-group"> 
+			<label for="input1">Enter your Age</label>
+			<!--input type="number" step="any" min="0" max="100" value=23.2-->
+			<input type="number" step="1" min="0" max="125" class="form-control" aria-describedby="input1Help" placeholder="Age" id="age" name="age" required="required">
+			<small id="input1Help" class="form-text text-muted"> Enter your age in years</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input2">Enter Sex</label>
+			<input type="number" step="1" min="0" max="1" class="form-control" aria-describedby="input2Help" placeholder="Enter Sex (0 or 1)" id="sex" name="sex" required="required">
+			<small id="input2Help" class="form-text text-muted">Sex (1 = male, 0 = female)</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input3">Enter Chest Paine</label>
+			<input type="number" step="1" min="0" max="5" class="form-control" aria-describedby="input3Help" placeholder="Enter Chest pain (0-4)" id="cp" name="cp" required="required">
+			<small id="input3Help" class="form-text text-muted"> Chest Paine (Value 1: typical angina, Value 2: atypical angina, Value 3: non-anginal pain, Value 4: asymptomatic)</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input4">Enter Blood Pressure</label>
+			<input type="number" step="1" min="50" max="250" class="form-control" aria-describedby="input4Help" placeholder="Enter Blood Pressure" id="trestbps" name="trestbps" required="required">
+			<small id="input4Help" class="form-text text-muted">Resting Blood Pressure (mm Hg) Range 50 to 250</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input5">Enter Cholesterol Measurement</label>
+			<input type="number" step="1" min="0" max="900" class="form-control"  aria-describedby="input5Help" placeholder="Enter Cholesterol Measurement" id="chol" name="chol" required="required">
+			<small id="input5Help" class="form-text text-muted">Cholesterol Measurement (mg/dl) Range 50 to 900</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input6">Enter Fasting Blood Sugar</label>
+			<input type="number" step="any" min="0" max="50" class="form-control" aria-describedby="input6Help" placeholder="Enter Fasting Blood Sugar (0 or 1)" id="fbs" name="fbs" required="required">
+			<small id="input6Help" class="form-text text-muted">If Fasting Blood Sugar > 120 (mg/dl) then 1 Otherwise 0 </small>
+		  </div>
+		  <div class="form-group">
+			<label for="input7">Enter Resting Electrocardiographic measurement</label>
+			<input type="number" step="1" min="0" max="3" class="form-control" aria-describedby="input7Help" placeholder="Enter Resting Electrocardiographic measurement (0,1,or 2)" id="restecg" name="restecg" required="required">
+			<small id="input7Help" class="form-text text-muted">Resting Electrocardiographic measurement (values 0,1,2)</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input8">Enter Maximum Heart rate</label>
+			<input type="number" step="1" min="10" max="180" class="form-control" aria-describedby="input8Help" placeholder="Enter Maximum Heart rate" id="thalach" name="thalach" required="required">
+			<small id="input8Help" class="form-text text-muted"> Maximum Heart rate achieved Range 50 to 180 </small>
+		  </div>
+		  <div class="form-group">
+			<label for="input13">Enter Exercise induced angina</label>
+			<input type="number" step="1" min="0" max="1" class="form-control" aria-describedby="input13Help" placeholder="Enter Exercise induced angina (0 or 1)" id="exang" name="exang" required="required">
+			<small id="input13Help" class="form-text text-muted"> Exercise induced angina (1 = yes; 0 = no) </small>
+		  </div>
+		  <div class="form-group">
+			<label for="input9">Enter ST depression</label>
+			<input type="number" step="any" min="0" max="10" class="form-control" aria-describedby="input9Help" placeholder="Enter Resting Electrocardiographic measurement" id="oldpeak" name="oldpeak" required="required">
+			<small id="input9Help" class="form-text text-muted">ST depression induced by exercise relative to rest Range 0.0 to 10.00</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input10">Enter slope of the peak exercise ST segment</label>
+			<input type="number" step="1" min="0" max="3" class="form-control" aria-describedby="input10Help" placeholder="Enter slope of the peak exercise ST segment (0-3)" id="slope" name="slope" required="required">
+			<small id="input10Help" class="form-text text-muted"> the slope of the peak exercise ST (1: upsloping, 2: flat, 3: downsloping) </small>
+		  </div>
+		  <div class="form-group">
+			<label for="input11">Enter Resting Electrocardiographic measurement</label>
+			<input type="number" step="1" min="0" max="5" class="form-control" aria-describedby="input11Help" placeholder="Enter Resting Electrocardiographic measurement" id="ca" name="ca" required="required">
+			<small id="input11Help" class="form-text text-muted">Resting Electrocardiographic:number of major vessels (0-4) colored by flourosopy</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input12">Enter Thalassemia</label>
+			<input type="number" step="1" min="0" max="8" class="form-control" aria-describedby="input12Help" placeholder="Enter thalassemia (0, 1, 2 or 3)" id="thal" name="thal" required="required">
+			<small id="input12Help" class="form-text text-muted">thalassemia (0=None; 1=normal; 2=fixed defect; 3=reversable defect) </small>
+		  </div>
+		  <center>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		  </center>
+		</form>
+    </div>
+{% endblock content %}
+{% block projectcontent %}
+	{% if Data %}
+	<div class="col-md-4">
+	<div class="content-section">
+		<h3>Result</h3>
+		<p class='text-muted'>
+		  <ul class="list-group">
+			<li class="list-group-item list-group-item-light">You have {{ Text }}</li>
+		  </ul>
+		</p>
+	  </div>
+	  <div class="content-section">
+		<h3>Your Inputs</h3>
+		<p class='text-muted'>
+		  <ul class="list-group">
+			<li class="list-group-item list-group-item-light">Age : {{ Data[0][0] }}</li>
+			<li class="list-group-item list-group-item-light">Sex :  {{ Data[0][1] }}</li>
+			<li class="list-group-item list-group-item-light">Chest pain type : {{ Data[0][2] }}</li>
+			<li class="list-group-item list-group-item-light">Blood pressur : {{ Data[0][3] }}</li>
+			<li class="list-group-item list-group-item-light">serum cholestoral : {{ Data[0][4] }}</li>
+			<li class="list-group-item list-group-item-light">fasting blood sugar : {{ Data[0][5] }}</li>
+			<li class="list-group-item list-group-item-light">Resting electrocardiographic results : {{ Data[0][6] }}</li>
+			<li class="list-group-item list-group-item-light">Heart rate achieved : {{ Data[0][7] }}</li>
+			<li class="list-group-item list-group-item-light">Exercise induced angina : {{ Data[0][8] }}</li>
+			<li class="list-group-item list-group-item-light">ST depression : {{ Data[0][9] }}</li>
+			<li class="list-group-item list-group-item-light">ST segment : {{ Data[0][10] }}</li>
+			<li class="list-group-item list-group-item-light">The number of major vessels : {{ Data[0][11] }}</li>
+			<li class="list-group-item list-group-item-light">Thalassemia : {{ Data[0][12] }}</li>
+		  </ul>
+		</p>
+	  </div>
+	</div>
+	{% else %}
+		<div class="col-md-4">
+		  <div class="content-section">
+			<h3>Inputs Formats</h3>
+			<p class='text-muted'>For example : [63,1,3,145,233,1,0,150,0,2.3,0,0,1],
+				[67, 1,	0, 160,	286, 0,	0, 108,	1, 1.5,	1, 3,2];
+				You can put your current physical information, check details below. We'll never share your data with anyone else.
+			  <ul class="list-group">
+				<li class="list-group-item list-group-item-light">Age : age in years</li>
+				<li class="list-group-item list-group-item-light">Sex :  Sex (1 = male, 0 = female)</li>
+				<li class="list-group-item list-group-item-light">Chest pain type : The chest pain experienced (1: typical angina, 2: atypical angina, 3: non-anginal pain, 4: asymptomatic)</li>
+				<li class="list-group-item list-group-item-light">Blood pressur : The resting blood pressure (mm Hg on admission to the hospital)</li>
+				<li class="list-group-item list-group-item-light">serum cholestoral : The cholesterol measurement in mg/dl</li>
+				<li class="list-group-item list-group-item-light">fasting blood sugar : The fasting blood sugar (> 120 mg/dl, 1 = true; 0 = false)</li>
+				<li class="list-group-item list-group-item-light">Resting electrocardiographic results : Resting electrocardiographic measurement (0 = normal, 1 = having ST-T wave abnormality, 2 = showing probable or definite left ventricular hypertrophy by Estes' criteria)</li>
+				<li class="list-group-item list-group-item-light">Heart rate achieved : The maximum heart rate achieved</li>
+				<li class="list-group-item list-group-item-light">Exercise induced angina : Exercise induced angina (1 = yes; 0 = no)</li>
+				<li class="list-group-item list-group-item-light">ST depression : ST depression induced by exercise relative to rest ('ST' relates to positions on the ECG plot. See more here)</li>
+				<li class="list-group-item list-group-item-light">ST segment : the slope of the peak exercise ST segment (1: upsloping, 2: flat, 3: downsloping)</li>
+				<li class="list-group-item list-group-item-light">The number of major vessels : The number of major vessels (0-3)</li>
+				<li class="list-group-item list-group-item-light">Thalassemia : A blood disorder called thalassemia (0=None; 1=normal; 2=fixed defect; 3=reversable defect)</li>
+				</ul>
+			</p>
+		  </div>
+		</div>
+	{% endif %}
+{% endblock projectcontent%}
+
+
+
+
+

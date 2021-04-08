@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>About Page</h1>
+    {% if message %}
+        <p class="text-secondary">To reset your password, visit the following link
+        <a href="{{message}}">here.</a></p>
+    {% endif %}
+
+{% endblock content %}

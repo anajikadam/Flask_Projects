@@ -1,0 +1,5 @@
+model_data1:
+  train_data: data/hiring.csv
+
+model_pkl_1:
+  model_path: flaskApp/projects/bin/project1/models/pred_sal_model.pkl

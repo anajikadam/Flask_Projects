@@ -1,0 +1,63 @@
+{% extends "project1/layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form action="{{ url_for('projects.predict1')}}" method="post" onsubmit="validateForm()">
+		  <div class="form-group"> 
+			<label for="input1">Enter Years of Experience</label>
+			<!--input type="number" step="any" min="0" max="100" value=23.2-->
+			<input type="number" step="1" min="0" max="30" class="form-control" aria-describedby="input1Help" placeholder="Experience" id="input1" name="input1" required="required">
+			<small id="input1Help" class="form-text text-muted">Experience Range 0 to 30 years</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input2">Enter Test Score</label>
+			<input type="number" step="any" min="1" max="10" class="form-control" aria-describedby="input1Help" placeholder="Enter Test Score " id="input2" name="input2" required="required">
+			<small id="input2Help" class="form-text text-muted">Test Score Range 0 to 10</small>
+		  </div>
+		  <div class="form-group">
+			<label for="input3">Enter Interview Score</label>
+			<input type="number" step="1" min="0" max="20" class="form-control" aria-describedby="input1Help" placeholder="Enter Interview Score" id="input3" name="input3" required="required">
+			<small id="input3Help" class="form-text text-muted">Interview Score Range 0 to 20</small>
+		  </div>
+		  <center>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		  </center>
+		</form>
+    </div>
+{% endblock content %}
+{% block projectcontent %}
+	{% if Data %}
+	<div class="col-md-4">
+	<div class="content-section">
+		<h3>Result</h3>
+		<p class='text-muted'>
+		  <ul class="list-group">
+			<li class="list-group-item list-group-item-light">{{ Text }}</li>
+		  </ul>
+		</p>
+	  </div>
+	  <div class="content-section">
+		<h3>Your Inputs</h3>
+		<p class='text-muted'>
+		  <ul class="list-group">
+			<li class="list-group-item list-group-item-light">Experience : {{ Data[0] }}</li>
+			<li class="list-group-item list-group-item-light">Test Score :  {{ Data[1] }}</li>
+			<li class="list-group-item list-group-item-light">Interview Score : {{ Data[2] }}</li>
+		  </ul>
+		</p>
+	  </div>
+	</div>
+	{% else %}
+		<div class="col-md-4">
+		  <div class="content-section">
+			<h3>Inputs Formats</h3>
+			<p class='text-muted'>You can put your information, check details below. We'll never share your data with anyone else.
+			  <ul class="list-group">
+				<li class="list-group-item list-group-item-light">Experience : Number of Years of Experience</li>
+				<li class="list-group-item list-group-item-light">Test Score :  Test Score</li>
+				<li class="list-group-item list-group-item-light">Interview Score : Interview Score</li>
+		  	</ul>
+			</p>
+		  </div>
+		</div>
+	{% endif %}
+{% endblock projectcontent%}

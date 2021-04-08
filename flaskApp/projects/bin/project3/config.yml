@@ -1,0 +1,9 @@
+model_data1:
+  train_data: data/
+
+model_pkl_1:
+  model_path: flaskApp/projects/bin/project3/models/XGB.pkl
+
+model_pkl_2:
+  model_path: flaskApp/projects/bin/project3/models/StandardSC.pkl
+

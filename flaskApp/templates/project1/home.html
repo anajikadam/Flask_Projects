@@ -1,0 +1,11 @@
+{% extends "project1/layout.html" %}
+{% block content %}
+        <div class="jumbotron">
+		  <h3 class="display-5">Predict Employee Salary </h3>
+		  <p class="lead">This is a simple machine learning Project to accurately predict
+		  whether the Employee Salary based on Years of Experience, Test Score and Interview Score.</p>
+		  <hr class="my-4">
+		  <p>Candidate data include the Years of Experience,Test Score and Interview Score.</p>
+		  <a class="btn btn-primary btn-lg" href="{{ url_for('projects.predict1') }}" role="button">Let's Check...</a>
+		</div>
+{% endblock content %}

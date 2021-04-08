@@ -1,0 +1,81 @@
+{% extends "project3/layout.html" %}
+{% block content %}
+    <h3>About Project<h3>
+	<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Project Overview 
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+	  <h2>Diagnosing Heart Disease</h2>
+	    By using Machine Learning to predict whether a person has Heart Disease or not, based on physical information about the patient
+		such as age, sex, chest pain type, Blood Pressure, Cholesterol, Blood sugar, 
+    rest ecg, max heart rate achieved, Angina depression and Thalassemia etc. 
+		
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Details about Physical Information 
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+        Develop a machine learning model to accurately predict whether the patients have diabetes or not.
+        <ul class="list-group">
+          <li class="list-group-item">The person's age in years</li>
+          <li class="list-group-item">The person's sex</li>
+          <li class="list-group-item">The chest pain experienced (typical angina,atypical angina, non-anginal pain,asymptomatic)</li>
+          <li class="list-group-item">The person's resting blood pressure (mm Hg on admission to the hospital)</li>
+          <li class="list-group-item">The person's cholesterol measurement in mg/dl</li>
+          <li class="list-group-item">The person's fasting blood sugar (> 120 mg/dl, 1 = true; 0 = false) </li>
+          <li class="list-group-item">Resting electrocardiographic measurement (normal,having ST-T wave abnormality, showing probable or definite left ventricular hypertrophy by Estes' criteria)</li>
+          <li class="list-group-item">The person's maximum heart rate achieved</li>
+          <li class="list-group-item">ST depression induced by exercise relative to rest (0 = no, 1 = yes)</li>
+          <li class="list-group-item">the slope of the peak exercise ST segment (upsloping, flat, downsloping)</li>
+          <li class="list-group-item">The number of major vessels</li>
+          <li class="list-group-item">A blood disorder called thalassemia (3 = normal; 6 = fixed defect; 7 = reversable defect)</li>
+          <li class="list-group-item">Heart disease (0 = no, 1 = yes)</li>
+        </ul>
+        <a href="https://www.kaggle.com/ronitf/heart-disease-uci"> Dataset Link</a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Diagnosis Details
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Diagnosis: The diagnosis of heart disease is done on a combination of clinical signs and test results. 
+        The types of tests run will be chosen on the basis of what the physician thinks is going on 1, 
+        ranging from electrocardiograms and cardiac computerized tomography (CT) scans, to blood tests and exercise stress tests 2.
+        Looking at information of heart disease risk factors led me to the following: high cholesterol, high blood pressure, diabetes, weight, family history and smoking 3.
+        According to another source 4, the major factors that can't be changed are: increasing age, male gender and heredity. 
+        Note that thalassemia, one of the variables in this dataset, is heredity. Major factors that can be modified are: Smoking, high cholesterol, high blood pressure, physical inactivity, 
+        and being overweight and having diabetes. 
+        Other factors include stress, alcohol and poor diet/nutrition. 
+        I can see no reference to the 'number of major vessels', but given that the definition of heart disease is "...what happens when your heart's 
+        blood supply is blocked or interrupted by a build-up of fatty substances in the coronary arteries", it seems logical the more major vessels is a good thing,
+        and therefore will reduce the probability of heart disease.
+        Given the above, I would hypothesis that, if the model has some predictive ability, we'll see these factors standing out as the most important.
+		
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
