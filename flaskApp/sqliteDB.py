@@ -16,10 +16,10 @@ conn = sqlite3.connect('site.db')
 # db.session.commit()
 cursor1 = conn.execute("SELECT * FROM Post")
 cursor2 = conn.execute("SELECT * FROM User")
-for row in cursor1:
-	print(row)
-# for row in cursor2:
+# for row in cursor1:
 # 	print(row)
+for row in cursor2:
+	print(row)
 
 sql = 'DELETE FROM User WHERE id=?'
 cur = conn.cursor()

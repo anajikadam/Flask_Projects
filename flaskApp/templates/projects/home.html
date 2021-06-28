@@ -1,27 +1,69 @@
 {% extends "projects/layout.html" %}
 {% block content %}
-    <div class="card" style="width: 18rem;">
-        <img src="../static/img/a1.jpg" class="card-img-top" alt="Img1">
-          <div class="card-body">
-              <h5 class="card-title">Project 1</h5>
-                <p class="card-text">Predict Employee Salary</p>
-                <a href="{{ url_for('projects.project_1') }}" class="btn btn-primary">project_1</a>
-          </div>
+    <div class="row">
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a1.jpg" class="card-img-top" alt="Img1">
+              <div class="card-body">
+                  <h5 class="card-title">Project 1</h5>
+                    <p class="card-text">Predict Employee Salary</p>
+                    <a href="{{ url_for('projects.project_1') }}" class="btn btn-primary">project_1</a>
+              </div>
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a2.jpg" class="card-img-top" alt="Img2">
+              <div class="card-body">
+                  <h5 class="card-title">Project 2</h5>
+                    <p class="card-text">Diabetes Prediction</p>
+                    <a href="{{ url_for('projects.project_2') }}" class="btn btn-primary">project_2</a>
+              </div>
+        </div>
+       </div>
     </div>
-    <div class="card" style="width: 18rem;">
-        <img src="../static/img/a2.jpg" class="card-img-top" alt="Img2">
-          <div class="card-body">
-              <h5 class="card-title">Project 2</h5>
-                <p class="card-text">Predict whether the patient have diabetes or not</p>
-                <a href="{{ url_for('projects.project_2') }}" class="btn btn-primary">project_2</a>
-          </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img src="../static/img/a2.jpg" class="card-img-top" alt="Img2">
-          <div class="card-body">
+    <div class="row">
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a2.jpg" class="card-img-top" alt="Img2">
+            <div class="card-body">
               <h5 class="card-title">Project 3</h5>
                 <p class="card-text">Diagnosing Heart Disease</p>
                 <a href="{{ url_for('projects.project_3') }}" class="btn btn-primary">project_3</a>
-          </div>
+            </div>
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a3.jpg" class="card-img-top" alt="Img2">
+              <div class="card-body">
+                  <h5 class="card-title">Project 4</h5>
+                    <p class="card-text">Project 4 Title</p>
+                    <a href="{{ url_for('projects.project_2') }}" class="btn btn-primary">project_4</a>
+              </div>
+        </div>
+       </div>
+    </div>
+    <div class="row">
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a3.jpg" class="card-img-top" alt="Img2">
+            <div class="card-body">
+              <h5 class="card-title">Project 5</h5>
+                <p class="card-text">Project 5 Title</p>
+                <a href="{{ url_for('projects.project_3') }}" class="btn btn-primary">project_5</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-md-6">
+        <div class="card" >
+            <img src="../static/img/a3.jpg" class="card-img-top" alt="Img2">
+              <div class="card-body">
+                  <h5 class="card-title">Project 6</h5>
+                    <p class="card-text">Project 6 Title</p>
+                    <a href="{{ url_for('projects.project_2') }}" class="btn btn-primary">project_6</a>
+              </div>
+        </div>
+       </div>
     </div>
 {% endblock content %}
