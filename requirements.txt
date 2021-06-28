@@ -30,14 +30,7 @@ Werkzeug==0.14.1
 WTForms==2.1
 xgboost==1.3.3
 urllib3==1.26.4
-numpy==1.19.5
-pandas==1.1.5
-gunicorn==19.9.0
-Werkzeug==0.14.1
-WTForms==2.1
-xgboost==1.3.3
-urllib3==1.26.4
-Werkzeug
+
 numpy==1.19.5
 pandas==1.1.5
 gunicorn==19.9.0
